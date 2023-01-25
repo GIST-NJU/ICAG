@@ -1,11 +1,18 @@
 # Test cases<br>
-Findutils: The test cases  are used to test subject Findutils.  
-Flex: The test cases  are used to test subject Flex.  
-Grep(CoRE): The test cases  are used to test subject Grep(CoRE).  
-Grep(SIR): The test cases  are used to test subject Grep(SIR).  
-Gzip: The test cases  are used to test subject Gzip.  
-Make: The test cases  are used to test subject Make.  
-Sed: The test cases  are used to test subject Sed.  
+## Findutils
+The test cases  are used to test subject Findutils.  
+## Flex 
+The test cases  are used to test subject Flex.  
+## Grep(CoRE)
+The test cases  are used to test subject Grep(CoRE).  
+## Grep(SIR)
+The test cases  are used to test subject Grep(SIR).  
+## Gzip
+The test cases  are used to test subject Gzip.  
+## Make
+The test cases  are used to test subject Make.  
+## Sed
+The test cases  are used to test subject Sed.  
 These test cases correspond to the incremental covering array with largest strength six and are sorted in ascending order of test strength. 
 
 # Subject Programs<br>
