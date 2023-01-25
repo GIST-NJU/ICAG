@@ -1,0 +1,53 @@
+P0: 0,1,2,3,4,5,6,7,8
+P1:0,1,2
+P2: 0,1,2,3,4
+P3: 0,1
+P4: 0,1
+P5: 0,1,2,3
+P6: 0,1,2
+P7: 0,1,2
+P8: 0,1,2
+P9: 0,1,2
+
+IF [P2] = 3 THEN [P0] <> 0;
+IF [P2] = 3 THEN [P0] <> 1;
+IF [P2] = 3 THEN [P0] <> 3;
+IF [P2] = 3 THEN [P0] <> 4;
+IF [P2] = 3 THEN [P0] <> 5;
+IF [P2] = 3 THEN [P0] <> 6;
+IF [P2] = 3 THEN [P0] <> 7;
+IF [P2] = 3 THEN [P0] <> 8;
+IF [P2] = 4 THEN [P0] <> 0;
+IF [P2] = 4 THEN [P0] <> 1;
+IF [P2] = 4 THEN [P0] <> 2;
+IF [P2] = 4 THEN [P0] <> 3;
+IF [P2] = 4 THEN [P0] <> 4;
+IF [P2] = 4 THEN [P0] <> 5;
+IF [P2] = 4 THEN [P0] <> 7;
+IF [P2] = 4 THEN [P0] <> 8;
+IF [P4] = 1 THEN [P1]<>2 OR [P3]<> 0 OR [P0] <> 0;
+IF [P4] = 1 THEN [P1]<>2 OR [P3]<> 0 OR [P0] <> 8;
+IF [P6] = 1 THEN [P0] <> 0;
+IF [P6] = 1 THEN [P0] <> 2;
+IF [P6] = 1 THEN [P0] <> 3;
+IF [P6] = 1 THEN [P0] <> 4;
+IF [P6] = 1 THEN [P0] <> 5;
+IF [P6] = 1 THEN [P0] <> 6;
+IF [P6] = 1 THEN [P0] <> 7;
+IF [P6] = 1 THEN [P0] <> 8;
+IF [P6] = 2 THEN [P0] <> 0;
+IF [P6] = 2 THEN [P0] <> 1;
+IF [P6] = 2 THEN [P0] <> 2;
+IF [P6] = 2 THEN [P0] <> 3;
+IF [P6] = 2 THEN [P0] <> 4;
+IF [P6] = 2 THEN [P0] <> 5;
+IF [P6] = 2 THEN [P0] <> 6;
+IF [P6] = 2 THEN [P0] <> 8;
+IF [P7] = 1 THEN [P1]<>2 OR [P3]<> 0 OR [P0] <> 0;
+IF [P7] = 1 THEN [P1]<>2 OR [P3]<> 0 OR [P0] <> 8;
+IF [P7] = 2 THEN [P1]<>2 OR [P3]<> 0 OR [P0] <> 0;
+IF [P7] = 2 THEN [P1]<>2 OR [P3]<> 0 OR [P0] <> 8;
+IF [P9] = 1 THEN [P1]<>2 OR [P3]<> 0 OR [P0] <> 0;
+IF [P9] = 1 THEN [P1]<>2 OR [P3]<> 0 OR [P0] <> 8;
+IF [P9] = 2 THEN [P1]<>2 OR [P3]<> 0 OR [P0] <> 0;
+IF [P9] = 2 THEN [P1]<>2 OR [P3]<> 0 OR [P0] <> 8;

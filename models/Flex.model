@@ -1,0 +1,28 @@
+P0: 0,1
+P1: 0,1
+P2: 0,1,2
+P3: 0,1,2
+P4: 0,1
+P5: 0,1
+P6: 0,1
+P7: 0,1
+P8: 0,1,2,3,4
+
+IF [P1] = 0 THEN [P2] <> 1;
+IF [P3] = 0 THEN [P2] <> 0;
+IF [P3] = 0 THEN [P2] <> 1;
+IF [P3] = 1 THEN [P2] <> 0;
+IF [P3] = 1 THEN [P2] <> 1;
+IF [P3] = 1 THEN [P1] <> 0;
+IF [P4] = 0 THEN [P2] <> 1;
+IF [P4] = 0 THEN [P3] <> 1;
+IF [P5] = 0 THEN [P2] <> 1;
+IF [P5] = 0 THEN [P3] <> 1;
+IF [P6] = 0 THEN [P2] <> 0;
+IF [P6] = 0 THEN [P2] <> 1;
+IF [P6] = 0 THEN [P3] <> 0;
+IF [P6] = 0 THEN [P3] <> 1;
+IF [P7] = 0 THEN [P3] <> 0;
+IF [P7] = 0 THEN [P3] <> 1;
+IF [P7] = 0 THEN [P2] <> 0;
+IF [P7] = 0 THEN [P2] <> 1;
