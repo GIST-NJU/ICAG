@@ -1,4 +1,5 @@
-#Incremental Covering Array Generator
+Incremental Covering Array Generator
+----
 Please refer to the directory "generator", which contains the generator in java jar file form and its instruction.
 
 #Test Models
