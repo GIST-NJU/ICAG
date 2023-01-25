@@ -1,5 +1,4 @@
 Incremental Covering Array Generation
-
 ==============================================================================
 
 Generator
