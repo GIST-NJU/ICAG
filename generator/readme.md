@@ -1,4 +1,4 @@
-ICAG generates  incremental coveing arrays by Bottom-up or Top-down strategy.
+ICAG generates incremental coveing arrays using Bottom-up or Top-down strategy.
 
 # Usage
 
