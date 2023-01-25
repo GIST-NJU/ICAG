@@ -14,7 +14,7 @@ The directory contains the test cases used to test subject `Make`.
 ## Sed
 The directory contains the test cases used to test subject `Sed`. <br><br> 
 
-Note:
+Note:<br>
 These test cases correspond to the incremental covering array with largest strength six and are sorted in ascending order of test strength. 
 
 # Subject Programs<br>
