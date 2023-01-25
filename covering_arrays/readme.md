@@ -22,4 +22,4 @@ Generation Time of Incremental Covering Arrays with highest strength 7
 -------------------
 Please refer to the file `generation_time_7.pdf`.
 
-The above time is in milliseconds.
+Time is in milliseconds.
