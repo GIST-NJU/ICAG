@@ -24,8 +24,8 @@ The directory contains the files which are the numbers of code lines of each ver
 
 Sed
 ---------- 
-The directory contains the files which are the numbers of code lines of each version of subject `Sed` covered by the incremental covering arrays generated.
-<br>
+The directory contains the files which are the numbers of code lines of each version of subject `Sed` covered by the incremental covering arrays generated.<br><br>
+
 
 Notes:
 * The largest strengths of incremental covering arrays are set to six. 
