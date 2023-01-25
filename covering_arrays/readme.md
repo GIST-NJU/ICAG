@@ -20,6 +20,7 @@ Please refer to the file `generation_time_6.pdf`.
 
 Generation Time of Incremental Covering Arrays with highest strength 7
 -------------------
-Please refer to the file `generation_time_7.pdf`.
+Please refer to the file `generation_time_7.pdf`.<br><br>
 
+Note:<br>
 Time is in milliseconds.
