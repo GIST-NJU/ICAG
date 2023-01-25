@@ -3,7 +3,7 @@ Incremental Covering Array Generation
 
 Generator
 ----
-Please refer to the directory `generator`, which provides the generator used to produce icremental covering arrays and its instruction.
+Please refer to the directory `generator`, which provides the generator used to produce incremental covering arrays and its instruction.
 
 Test Models
 ----
