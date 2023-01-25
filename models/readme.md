@@ -1,1 +1,1 @@
-The model files are consistent with the input model of PICT tool.
+The model files are consistent with the input model of 'PICT' tool.
