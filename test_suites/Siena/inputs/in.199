@@ -1,0 +1,6 @@
+filter
+senp{x=0} filter {price = 667.14 available = true}
+event
+senp{x=1} event {demand = 20}
+senp{x=1} event {stock = 110}
+senp{x=1} event {item_no = 10}

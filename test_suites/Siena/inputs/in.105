@@ -1,0 +1,4 @@
+filter
+senp{x=0} filter {value > 13.45 price > 150.34}
+event
+senp{x=1} event {x = 30 }

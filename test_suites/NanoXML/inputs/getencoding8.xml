@@ -1,0 +1,4 @@
+<!DOCTYPE FOO SYSTEM "getcodingdtd8.dtd" [
+    <!ENTITY % extParamEntity "blah">
+]>
+<FOO x='1'>&value;</FOO>

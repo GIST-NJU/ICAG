@@ -1,0 +1,4 @@
+filter
+senp{x=0} filter {x > 30 y > 20}
+event
+senp{x=1} event {y = 30}

@@ -1,0 +1,4 @@
+filter
+senp{x=0} filter {item > "s" brand > "d"}
+event
+senp{x=1} event {item = "soap" brand = "dial"}

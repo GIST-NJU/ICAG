@@ -1,0 +1,2 @@
+filter
+senp{x=0} filter {x * "g" }

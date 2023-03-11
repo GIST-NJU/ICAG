@@ -1,0 +1,5 @@
+filter
+senp{x=0} filter {item_no = 150 }
+event
+senp{x=1} event {item_no = 150}
+senp{x=1} event {stock = 100}

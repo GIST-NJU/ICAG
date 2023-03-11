@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE xsl:stylesheet [ <!ENTITY nbsp "&#160;"> ]>
+<!-- xsl stylesheet for standings.xml -->
+<xsl:stylesheet version="1.0"
+	xmlns:xsl = "http://www.w3.org/1999/XSL/Transform"
+        xmlns:g = "http://cse.unl.edu/~galileo/dtd/XMLBowl"
+	xmlns = "http://www.w3.org/1999/xhtml">
+
+<xsl:template match="/">
+<html><head><title>The Industrial Leagues Bowling Championship</title>
+</head><body>
+<p style="text-align: center; font-family: Arial, sans-serif;">
+<img id="top" class="top" width="350" height="230"
+        src="./bowling.jpg" alt="bowling picture"/>
+</p>
+<h1 style="text-align: center;">Industrial Leagues Bowling Championship Tournament</h1>
+<p style="text-align: center; font-family: Arial, sans-serif; font-size=14pt;">
+<a href="http://www.48bowl.com/pkwy_home.htm">Parkway Lanes</a>
+</p>
+<p  style="text-align: center; font-family: Arial, sans-serif; font-size=14pt;">
+Lincoln
+</p>
+<div><br/></div>
+<div style="text-align: center; font-family: Arial, sans-serif;">
+<a href="#teams">Team Pools</a>&nbsp;
+<a href="#PoolAMatches">Pool A Matches</a>&nbsp;
+<a href="#PoolBMatches">Pool B Matches</a>&nbsp;
+<a href="#tourney">Tournament Play</a>
+</div>
+<div><br/></div>
+<p>all of the attributes seen here are:
+<xsl:value-of select="@*"/></p>
+<xsl:apply-templates select="Tournament"/>
+</body></html>
+</xsl:template>
+
+<xsl:template match="Tournament">
+<h3>This is in the template match Tournament</h3>
+<xsl:apply-templates select="Pool"/>
+<xsl:apply-templates select="Final"/>
+</xsl:template>
+
+<xsl:template match="Pool">
+<p>This is the Pool template data</p>
+<xsl:value-of select="@Pname"/>
+</xsl:template>
+
+<xsl:template match="Final">
+</xsl:template>
+
+</xsl:stylesheet>

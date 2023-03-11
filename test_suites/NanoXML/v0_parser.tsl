@@ -1,0 +1,40 @@
+Parameters:
+	     
+    Element content_type:	#P0(0-1)
+        Mixed.    	                    
+       Text.                               
+        
+    Element Content:	#P1(2-3)
+       child elements.                 
+      data.
+        
+    attribute number:	#P2(4-5)
+        One.                         
+        Many.                        
+  
+
+    attribute quote:		#P3(6-7)
+        properly double_quoted.         
+        properly single_quoted.         
+   
+    headInfo:		#P4(8-9)
+       empty.                         
+       nonempty.                       [property head]
+
+   head dtd file:		#P5(10-13)
+       double quoted systemID.              [if head]  
+       single quoted SystemID.              [if head]
+       fullpath of dtd file.                [if head]
+       n/a
+ 
+
+  ENTITY:			#P6(14-15)
+     processEntity.                      [if head]
+     n/a
+
+
+
+
+
+
+

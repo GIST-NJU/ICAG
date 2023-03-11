@@ -1,0 +1,4 @@
+filter
+senp{x=0} filter {fruit = "apple" color = "red"}
+event
+senp{x=1} event {x = 30 }

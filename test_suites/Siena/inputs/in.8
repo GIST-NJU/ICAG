@@ -1,0 +1,12 @@
+filter
+senp{x=0} filter {v="abc" x=30 y=40 z=50}
+event
+senp{x=1} event {v="abc" x =30}
+filter
+senp{x=0} filter {w>"milk" x=35.24 y>40 z=2.4}
+event
+senp{x=1} event {y=50 z=2.4}
+filter
+senp{x=0} filter {v >* "egg" w="orange" x<=3.24 y=40 z!=2.4}
+event
+senp{x=1} event {v="eggs" x=3.0 z=2.5}

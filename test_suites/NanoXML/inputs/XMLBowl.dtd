@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!ELEMENT Tournament (TeamPools+, Pool+, Final+)>
+<!ATTLIST Tournament
+	Tname CDATA #REQUIRED>
+<!ELEMENT TeamPools (Group+)>
+<!ELEMENT Group (Contestant+)>
+<!ATTLIST Group
+	gname	CDATA #REQUIRED>
+<!ELEMENT Pool (Round+)>
+<!ATTLIST Pool
+	Pname 	CDATA #REQUIRED>
+<!ELEMENT Contestant (Cname+)>
+<!ATTLIST Contestant
+	number CDATA #REQUIRED>
+<!ELEMENT Cname (#PCDATA)>
+<!ELEMENT Round (Match+)>
+<!ATTLIST Round
+	number CDATA #REQUIRED>
+<!ELEMENT Match (Team+)>
+<!ELEMENT Team (Number+, Score+)>
+<!ELEMENT Number (#PCDATA)>
+<!ELEMENT Score (#PCDATA)>
+<!ELEMENT Final (SemiRound+, FinalRound+)>
+<!ELEMENT SemiRound (SemiPool,Match+)>
+<!ATTLIST SemiRound
+	number CDATA #REQUIRED>
+<!ELEMENT SemiPool (#PCDATA)>
+<!ELEMENT FinalRound (Team+)>
+<!ATTLIST FinalRound
+	Rnumber CDATA #REQUIRED>

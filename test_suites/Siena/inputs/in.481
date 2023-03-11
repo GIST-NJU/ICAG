@@ -1,0 +1,5 @@
+filter
+senp{x=0} filter {price = 55 item_no = 100}
+event
+senp{x=1} event {item = "watch" price = 55}
+senp{x=1} event {item = "watch" price = 55}

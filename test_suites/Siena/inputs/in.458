@@ -1,0 +1,4 @@
+filter
+senp{x=0} filter {price > 50 demand > 10}
+event
+senp{x=1} event {item = watch price = 55}

@@ -1,0 +1,69 @@
+#               grep_2.3 (test Regular expression)  NOTE---- Reverse inherit from v1 
+
+# Usage: target [OPTION]... PATTERN [FILE]...               
+# Search for pattern in each FILE or standard input.
+    
+#************************************************************************  
+#Function unit 1: test all kinds of regular expression
+
+Parameters:
+
+	Regexp selection and interpretation:                    #P0(0-2)
+		-E.      				[property Extended, NonFixed]
+		-F.         				[property Fixed]
+		-G, no option. 				[property Basic, NonFixed]
+		     
+  
+	Quoting:					#P1(3-5)
+		pattern is single quoted.		[property SingleQuoted, Quoted]
+		pattern is double quoted.		[property DoubleQuoted, Quoted]
+		pattern is not quoted.			[property NotQuoted]
+
+		
+	A list of characters in RE enclosed by [ and ]:	#P2(6-9)
+		no hyphen no first '^' (not).		[if NonFixed && SingleQuoted] [property List]
+		literal ](first in the list).		[if NonFixed && DoubleQuoted] [property List] 	
+		'^[alnum]', '\W= [^[alnum]]'.		[if NonFixed && SingleQuoted] [property List]
+		no list.                                [property NonList]
+		
+	miscellaneous (reduce test cases):		#P3(10-15)
+		'dot' (any single character).		[if NonFixed && (SingleQuoted && NonList)]
+		^ (empty string at begining of a line).	[if NonFixed && (DoubleQuoted && NonList)] 
+		\< (empty string at begining of a word).[if NonFixed && (DoubleQuoted && NonList)] 
+		\b (empty string at edge of a word).	[if NonFixed && (DoubleQuoted && NonList)] 
+	      	no  miscellaneous.                      [if SingleQuoted]
+		n/a.				#added
+	        	
+	       	Repetition operators:		#P4(16-23)
+		?.					[if Extended && (Quoted && NonList)] [property Repe]
+		'\?'.					[if Basic && (NonList && Quoted)] [property Repe]
+		+.					[if Extended && (Quoted && NonList)] [property Repe]
+		'\+'.					[if Basic && (NonList && Quoted)] [property Repe]
+		{N}.					[if Extended && (Quoted && NonList)] [property Repe]
+		'\{N\}'.				[if Basic && (NonList && Quoted)] [property Repe]
+		no repetition.                          [if SingleQuoted]   
+		n/a.				#added
+		
+	leading character for repetition:		#P5(24-27)
+	 	metacharacters by preceding it with \. 	[if Extended && Repe]
+	 	metacharacters itself. 			[if Basic && Repe]
+	 	any letters or digits.			[if Repe]
+		n/a.				#added
+ 		
+	Regular expression join |:			#P6(28-30)
+		have alternation |.   			[if Extended && Quoted] [property Alter]
+		have alternation'\|'.			[if Basic && Quoted] [property Alter]
+          		no alternation.                         
+	
+	Regular expression concatenated:		#P7(31-32)
+		have concatenation.			[if NonFixed && Quoted] [property Concat]
+		no concatenation.  
+		       
+	#reduce test cases by different Extended and Basic
+	test precedence ():				#P8(33-37)
+		1st- repetition over concatenation.	[if Concat && Repe]
+		2nd- concatenation over alternation.	[if Alter && Concat]
+		parentheses overide 1st rule with ().	[if Extended && (Concat && Repe)] [property paren]
+		parentheses overide 2nd rule with \(\).	[if Basic && (Alter && Concat)] [property paren]
+		n/a.				#added
+  

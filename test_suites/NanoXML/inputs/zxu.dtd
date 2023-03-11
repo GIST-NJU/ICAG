@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ENTITY % extParamEntity SYSTEM "include.ent">
+<!ENTITY value "%extParamEntity;">
+<!ELEMENT FOO (#PCDATA)>
+<!ATTLIST FOO 
+        x CDATA #REQUIRED
+        y CDATA #FIXED "fixedValue"
+        z CDATA "defaultValue">

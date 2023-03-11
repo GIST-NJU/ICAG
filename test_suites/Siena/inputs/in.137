@@ -1,0 +1,4 @@
+filter
+senp{x=0} filter {price > 120.50 discount = 10.00}
+event
+senp{x=1} event {item_no = 150}

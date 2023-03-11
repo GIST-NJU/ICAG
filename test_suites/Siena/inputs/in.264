@@ -1,0 +1,5 @@
+filter
+senp{x=0} filter {price > 150.24 item > keyboard}
+event
+senp{x=1} event {stock = 100 item_no = 10}
+senp{x=1} event {stock = 100 item_no = 10}

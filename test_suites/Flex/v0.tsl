@@ -1,0 +1,50 @@
+# Test Specification for flex command
+#flex-2.4.3
+#modified by Amit Goel 8,August,2001
+# made output file : on from error to single
+
+Parameters:
+
+	Debug mode:			# -d    P0(0-1)
+		Debug_on.
+		Debug_off.
+
+	Bypass use:			# -Cr   P1(2-3)
+		Bypass_on.				[property Bypass]
+		Bypass_off.
+
+	Fast scanner:			# -f, -Cf    P2(4-6)
+		FastScan.			[property FastScan]
+		FullScan.			[if !Bypass][property FullScan]
+		off.				[property f&Cfoff]
+
+	Fast scanner with table:		# -F, -CF      P3(7-9)
+		FastScanTable.			[if f&Cfoff][property FastScanTable]
+		Alternate fast.			[if f&Cfoff && !Bypass][property AltFast]		
+		off.				[property F&CFoff]
+
+	Align:				# -Ca, -Cfa, -CFa     P4(10-11)
+		Align.				[if !FullScan && !AltFast][property Align]		
+		off.
+
+	Equivalence classes:		# -Ce, -Cfe, -CFe    P5(12-13)
+		EquiClass.			[if !FullScan && !AltFast][property EquiClass]			
+		off.
+	
+	Meta-equivalence classes:	# -Cm     P6(14-15)
+		on.		[if f&Cfoff && F&CFoff][property MetaEq]
+		off.
+
+
+	Compatibility with AT&T lex:	# -l      P7(16-17)
+		on.			[if (F&CFoff && f&Cfoff)] 
+		off.			
+
+Environments:
+
+	Patterns:                                              #P8(18-22)
+		Character_Range.			
+		Character_Expression.			
+		Closure.			
+		Expression.			
+		All.	

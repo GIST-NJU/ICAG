@@ -1,0 +1,74 @@
+# Test specification for sed v0
+# version 0.2
+# by KYLE R. MURPHY
+# June 2006
+
+
+# command line arguments for sed
+COMMAND LINE OPTIONS:
+        output control:		#P0(0-1)
+                -n.   					[property Suppress]
+                none.                                   [property NoSuppress]
+
+        command source:		#P1(2-3)
+                -e, one occurance.                      [property Command]
+                -f, one occurance.                      [property Script]
+
+# partition of input sources
+SCRIPT/COMMAND INPUT SOURCE:
+        script type:			#P2(4-5)
+                single script.	                        [if Script]
+	single sed command.			[if Command] 
+
+
+        script file:			#P3(6-7)
+                file exists.                            [if Script] [property ScriptFile_Exist]
+	n/a.
+
+# partition of various commands
+STREAM EDITING COMMANDS:
+       	main edits:		#P4(8-13)
+                delete (d).                             [property delete, P_Flaggable]
+		Delete (D).				[if Script] [property Delete, P_Flaggable]
+		substitute (s).				[property Substitute, G_Flaggable, P_Flaggable]
+		s/d.					[property delete, Substitute, G_Flaggable, P_Flaggable]
+		s/D.					[property Delete, Substitute, G_Flaggable, P_Flaggable]
+		none.					[if Script]
+			
+	other:			#P5(14-23)
+                append (a).                             [if Script] [property Append, P_Flaggable]
+                insert (i).                             [if Script] [property Insert, P_Flaggable]
+                change (c).                             [if Script] [property Change, P_Flaggable]
+                list (l).                               [if Script] [property List, P_Flaggable]
+                transform (y).                          [if Script] [property Transform, P_Flaggable]
+                file read (r file). 			[if Script] [property Read]
+                file write (w file). 			[if Script] [property Write] 
+                quit (q).				[if Script] [property Quit] 
+	none.					[if Script]
+	n/a.
+
+        flags and options:		
+                global (g):		#P6(24-25)
+                        on.		                [if G_Flaggable] [property Global]
+	       n/a.
+
+                print (p, P):		#P7(26-29)
+                        print on.                       [if Suppress && P_Flaggable] [property print]
+                        Print on.			[if Script && Suppress && P_Flaggable] [property Print]
+	       off.                      	[if NoSuppress] [property print_OFF]
+	       n/a.
+
+                nth occurance (n):		#P8(30-31)
+                       	on.              	        [if Substitute && !Global] [property nth]
+  		n/a.
+
+		write to file flag (w):	#P9(32-33)
+			on.				[if Substitute && !Write] [property w]
+			n/a.
+
+		next (n, N):		#P10(34-36)
+			next.				[if Script] [property next_ON]		
+			Next.				[if Script] [property Next_ON]
+			n/a.
+
+

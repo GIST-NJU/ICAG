@@ -1,0 +1,4 @@
+filter
+senp{x=0} filter {item > "computer" price > 2000.00}
+event
+senp{x=1} event {x = 30 }

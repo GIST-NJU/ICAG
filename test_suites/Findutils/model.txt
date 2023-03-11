@@ -1,0 +1,44 @@
+scriptno:                    	#P0(0-8)  0- startup0.sh&exit0.sh     1- startup1.sh&exit1.sh     2- startup2.sh&exit2.sh  3- startup3.sh&exit3.sh  4- startup4.sh&exit4.sh
+  0,1,2,3,4,5,6,7,8		#              5- startup5.sh&exit5.sh     6- startup6.sh&exit6.sh     7- startup7.sh&exit7.sh  8- startup8.sh&exit8.sh
+
+
+symlink:                   	#P1(9-11)
+  none,-H,-L
+
+dir:                                 	#P2(12-16)
+  none,.,tmpdir,link,tmpdir/short tmpdir/longer
+  dir=link => scriptno=2
+  dir=tmpdir/short tmpdir/longer => scriptno=6
+
+depth:                           	#P3(17-18)
+  none,-maxdepth 0
+
+reg: 		                #P4(19-20)
+  none,-regex x
+  reg=-regex x => symlink!=-L || depth!=none || scriptno!=0
+  reg=-regex x => symlink!=-L || depth!=none || scriptno!=8
+
+type: 			#P5(21-24)
+  none,-type d,-type f,-type l
+
+name: 			#P6(25-27)
+  none,-name bug,-name yyyy
+  name=-name bug => scriptno=1
+  name=-name yyyy => scriptno=7
+
+time: 			#P7(28-30)
+  none,-mtime -2,-ctime -2
+  time=-mtime -2=> symlink!=-L || depth!=none || scriptno!=0
+  time=-mtime -2 => symlink!=-L || depth!=none || scriptno!=8
+  time=-ctime -2=> symlink!=-L || depth!=none || scriptno!=0
+  time=-ctime -2 => symlink!=-L || depth!=none || scriptno!=8
+
+prin: 			#P8(31-33)
+  none,-print,-printf "%H\n"
+
+comm: 			#P9(34-36)
+  none,-execdir pwd \;,-execdir ls {} \;
+  comm=-execdir pwd \; => symlink!=-L || depth!=none || scriptno!=0
+  comm=-execdir pwd \; => symlink!=-L || depth!=none || scriptno!=8
+  comm=-execdir ls {} \; => symlink!=-L || depth!=none || scriptno!=0
+  comm=-execdir ls {} \; => symlink!=-L || depth!=none || scriptno!=8

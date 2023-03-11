@@ -1,0 +1,5 @@
+filter
+senp{x=0} filter {item_no > 60 brand > "c"}
+event
+senp{x=1} event {item = "soap" brand = dial}
+senp{x=1} event {item_no = 100 price = 2}

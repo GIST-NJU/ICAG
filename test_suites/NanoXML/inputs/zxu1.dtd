@@ -1,0 +1,22 @@
+<!ELEMENT memories (memory)* >
+
+<!-- Short form -->
+<![IGNORE[
+   <!ELEMENT memory (media | subdate | subject+)* >
+]]>
+
+<!-- Full form -->
+<![INCLUDE[
+   <!ELEMENT memory (media | subdate | donor?| subject+| location)* >
+   <!ELEMENT location (description|place) >
+   <!ELEMENT description (#PCDATA) >
+   <!ELEMENT place (#PCDATA) >
+   <!ELEMENT donor (#PCDATA) >
+]]>
+
+<!ATTLIST memory tapeid IDREF #REQUIRED>
+<!ELEMENT subdate (#PCDATA) >
+<!ELEMENT subject (#PCDATA) >
+<!ELEMENT media EMPTY >
+<!ATTLIST media mediaid ID #REQUIRED
+                status CDATA #IMPLIED >

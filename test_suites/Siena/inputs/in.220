@@ -1,0 +1,4 @@
+filter
+senp{x=0} filter {item = "cup" request = "yes"}
+event
+senp{x=1} event {stock = 100 item_no = 10}

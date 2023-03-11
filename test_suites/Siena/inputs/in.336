@@ -1,0 +1,4 @@
+filter
+senp{x=0} filter {stock > 200}
+event
+senp{x=1} event {item = "soap" brand = "dial"}

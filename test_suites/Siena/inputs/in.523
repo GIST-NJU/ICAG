@@ -1,0 +1,5 @@
+filter
+senp{x=0} filter {sales_rate > 10.5 price > 43.25}
+event
+senp{x=1} event {item = "watch" price = 55}
+senp{x=1} event {item_no = 150 price = 45.43}

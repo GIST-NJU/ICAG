@@ -1,0 +1,46 @@
+PLAN1: 		#P0(0-1)   00- none     01- LC_ALL=ru_RU.KOI8-R     02-LC_ALL=en_US.UTF-8 
+  0,1          
+PLAN2:		#P1(2-4)   10- LC_ALL=tr_TR.UTF-8     11-export LC_ALL=en_US.UTF-8    12-export LC_ALL=ja_JP.sjis
+  0,1,2       
+
+PREG:             	#P2(5-7)
+  none,-F,-E
+
+PX: 		#P3(8-9)
+  none,-x
+
+PI: 		#P4(10-11)
+  none,-i
+
+PW: 		#P5(12-13)
+  none,-w
+
+PD:		#P6(14-15)
+  none,--devices=skip
+  PD=--devices=skip  => PINP!=*
+  PD=--devices=skip  => PINP!=x
+
+PR: 		#P7(16-17)
+  none,-r
+  PR=-r  => PINP!=echo A |
+  PR=-r  => PINP!=< /dev/null
+
+PINC: 		#P8(18-20)
+  none,--include='*.e',--include=in1
+  PINC=--include='*.e'  => PINP!=echo A |
+  PINC=--include='*.e'  => PINP!=< /dev/null
+  PINC=--include=in1  => PINP!=echo A |
+  PINC=--include=in1  => PINP!=< /dev/null
+
+PEXC: 		#P9(21-22)
+  none,-exclude='2.e'
+  PEXC=-exclude='2.e' => PINP!=echo A |
+  PEXC=-exclude='2.e' => PINP!=< /dev/null
+
+PEXP1:                    #P10(23-25)     00- '[a-z\]'     01- -f /dev/null     02-....  
+  0,1,2                      #                      10-'\(foo\) \1'   11- "[é\]"  12-A                              
+PEXP2:                     #P11(26-28)     20-'(^| )*(a|b)*(c|d)*( |$)'     21-'^$'     22-$'\274\241'
+  0,1,2 
+
+PINP:		#P12(29-32)
+  echo A |, *, < /dev/null,x

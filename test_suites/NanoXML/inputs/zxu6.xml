@@ -1,0 +1,3 @@
+<!DOCTYPE FOO SYSTEM "zxu1.dtd" [
+    <!ENTITY % extParamEntity "blah">
+]>

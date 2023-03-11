@@ -1,0 +1,73 @@
+# Test specification for Siena HierarchicalDispatcher "application"
+#
+# This specification is designed to test methods publish(SENPPacket),
+# subscribe(SENPPacket), unsubscribe(SENPPacket) and unsubscribe(Notifiable)
+# of interface Siena, which is implemented by class HierarchicalDispatcher.
+#
+# In this specification, an instance of HierarchicalDispatcher is called a
+# "server", any non-server entity interacting with a server (including a
+# test program) is called a "client" or a "pub" (for publisher) or a
+# "sub" (for subscriber), and an attribute is called an "attr".  A "matching
+# pub" is a publisher whose notifications match the subscriber's subscriptions,
+# while a "non-matching pub" is a publisher whose notifcations do not match
+# the subscriber's subscriptions.
+
+Environments:
+
+    Client configuration:			#P0(0-2)
+	one pub only.			[property PublisherOnly]
+	one sub only.			[property SubscriberOnly]
+	one sub and one matching pub.	[property Matching]
+
+Parameters:
+
+    Type of attrs in notifications:		#P1(3-6)
+	int.				[if !SubscriberOnly]
+	multiple with same type.		[if !SubscriberOnly]
+					[property MultiAttrs]
+	multiple with mixed types.		[if !SubscriberOnly]
+					[property MultiAttrs]
+ 	n/a			 	[if SubscriberOnly]
+
+    Form of notifications:			#P2(7-9)
+	multiple attrs with same name.	[error] [if !SubscriberOnly]
+	one attr.				[if !(SubscriberOnly || MultiAttrs)]
+	two attrs.				[if !SubscriberOnly]
+ 	n/a				[if SubscriberOnly]
+
+    Number of notifications:			#P3(10-14)
+	one.				[if !SubscriberOnly]
+	two same.			[if !SubscriberOnly]
+	two different.			[if !SubscriberOnly]
+	multiple.				[if !SubscriberOnly]
+ 	n/a 				[if SubscriberOnly]
+
+  Type of constraints in subscriptions:		#P4(15-18)
+	int.				[if !PublisherOnly]
+	multiple with same type.		[if !PublisherOnly]
+					[property MultiConstraints]
+	multiple with mixed types.		[if !PublisherOnly]
+					[property MultiConstraints]
+ 	n/a [if PublisherOnly]
+
+   Operator of constraints in subscriptions:	#P5(19-22)
+	equal.				[if !PublisherOnly]
+	greater than.			[if !PublisherOnly]
+	multiple.				[if !PublisherOnly && MultiConstraints]
+ 	n/a 				[if PublisherOnly]
+
+
+  Form of subscriptions:			#P6(23-25)
+	one constraint.			[if !(PublisherOnly || MultiConstraints)]
+	two constraints for different attrs.	[if !PublisherOnly]
+ 	n/a 				[if PublisherOnly]
+
+  Number of subscriptions:			#P7(26-28)
+	one.				[if !PublisherOnly]
+	one with unsubscription.		[if !PublisherOnly] [property Unsubscribe]	
+ 	n/a 				[if PublisherOnly]
+
+  Unsubscriptions:				#P8(29-31)
+	with filter.			[if !PublisherOnly && Unsubscribe]
+	without filter.			[if !PublisherOnly && Unsubscribe]
+ 	n/a 				[if !Unsubscribe]

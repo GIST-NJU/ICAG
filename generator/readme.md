@@ -4,7 +4,7 @@ ICAG generates incremental coveing arrays using Bottom-up or Top-down strategy.
 
 ICAG runs as a command line tool that accepts a model file as an input and produces a incremental covering array.
 
-Assuming installation of `JDK 11` or higher versions, following the command will generate a incremental covering array.
+Assuming installation of `JDK 8` or higher versions, following the command will generate a incremental covering array.
 
 `java -jar icag.jar <model> <largest strength> <mode>`
 

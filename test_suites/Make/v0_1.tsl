@@ -1,0 +1,49 @@
+# Joseph Ruthruff, October 8, 2000
+# TSL for Make-3.78.1: v1.0
+
+# Parameters:
+            
+    -d:				#P0(0-1)
+        Flag not used.
+        Flag used.                                                 [property dFlag]
+    
+    -e:				#P1(2-3)
+        Flag not used.
+        Flag used.                                                 
+    
+    
+    -i:				#P2(4-5)
+        Flag not used.                                             
+        Flag used.                                                 [property iFlag]
+ 
+            
+    -k:				#P3(6-7)
+        Flag not used.
+        Flag used.                                                 [if !iFlag] [property kFlag]
+    
+    -n:				#P4(8-9)
+        Flag not used.
+        Flag used.                                                 [property nFlag]
+    
+    
+    -p:				#P5(10-11)
+        Flag not used.
+        Flag used.
+    
+    
+    -s:				#P6(12-13)
+        Flag not used.
+        Flag used.
+    
+    -w:				#P7(14-15)
+        Flag not used.
+        Flag used.
+
+# Environment:
+    c files changed:			#P8(16-17)
+        Zero c files changed.
+        Two or more c files changed.
+
+    Lines in Makefile:		#P9(18-19)
+        Less than 100 lines.
+        Either 100 lines or greater than 100 lines.
